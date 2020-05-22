@@ -1,23 +1,42 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import firebase from 'firebase'
 
 Vue.use(VueRouter)
 
   const routes = [
+    {
+      path: '*',
+      redirect: 'Iniciomodal'
+    },
+    
   {
-    path: '/',
+    path: '/home',
     name: 'Home',
-    component: Home
+    component: () => import(/* webpackChunkName: "home" */ '../views/Home.vue'),
   },
   {
     path: '/about',
     name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+  },
+  {
+    path: '/header',
+    name: 'header',
+    component: () => import(/* webpackChunkName: "header" */'../views/Header.vue')
+  },
+  {
+    path: '/fotos/:id',
+    name: 'fotos',
+    component: () => import(/* webpackChunkName: "fotos" */'../views/Fotos.vue')
+  },
+  {
+    path: '/',
+    name: 'InicioModal',
+    component: () => import(/* webpackChunkName: "InicioModal" */'../views/InicioModal.vue')
+  },
+
 ]
 
 const router = new VueRouter({
