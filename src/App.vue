@@ -11,8 +11,8 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item :to="{ name: 'Home'}">Home</b-nav-item>
-        <b-nav-item :to="{ name: 'About'}">About</b-nav-item>
+        <b-nav-item disabled :to="{ name: 'Home'}">Home</b-nav-item>
+        <b-nav-item disabled :to="{ name: 'About'}">About</b-nav-item>
         
       </b-navbar-nav>
 
@@ -20,25 +20,20 @@
       <b-navbar-nav class="ml-auto">
         <b-nav-form>
           <b-form-input size="sm" class="mr-sm-2" placeholder="Buscar"></b-form-input>
-          <b-button size="sm" class="my-2 my-sm-0" type="search">Buscar</b-button>
+          <b-button size="sm" disabled class="my-2 my-sm-0" type="search">Buscar</b-button>
         </b-nav-form>
 
-        <b-nav-item-dropdown text="Lenguaje" right>
-          <b-dropdown-item href="#">EN</b-dropdown-item>
-          <b-dropdown-item href="#">ES</b-dropdown-item>
-          <b-dropdown-item href="#">RU</b-dropdown-item>
-          <b-dropdown-item href="#">FA</b-dropdown-item>
-        </b-nav-item-dropdown>
+       
 
         <b-nav-item-dropdown right>
           <!-- Using 'button-content' slot -->
-          <template v-slot:button-content>
+          <template disabled v-slot:button-content>
             <em>Usuario</em>
           </template>
 
-          <b-dropdown-item href="#">Perfil</b-dropdown-item>
+          <b-dropdown-item disabled="" href="#">Perfil</b-dropdown-item>
           <b-dropdown-item :to="{ name: 'InicioModal'}">Iniciar Sesion</b-dropdown-item>
-          <b-dropdown-item href="#">Cerrar Sesion</b-dropdown-item>
+          <b-dropdown-item disabled href="#">Cerrar Sesion</b-dropdown-item>
           
           
         </b-nav-item-dropdown>
