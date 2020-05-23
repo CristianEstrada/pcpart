@@ -37,7 +37,7 @@
       </b-form>
        -->
 
-      <b-form @submit.prevent="login" @reset="onReset" v-if="show">
+      <b-form @submit.prevent="login" @submit="Link" @reset="onReset" v-if="show">
         <b-form-group
           id="Usuario"
           label="Usuario"
@@ -106,8 +106,13 @@ export default {
           (error) => console.error(error),
 
         );
+
         
     },
+    Link(){
+          alert('el usuario se autentico correctamente');
+          location.replace('https://modest-kepler-f68d08.netlify.app');
+      }
   },
 };
 </script>
