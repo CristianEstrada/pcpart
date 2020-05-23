@@ -9,7 +9,7 @@ Vue.use(VueRouter)
       path: '*',
       redirect: 'Iniciomodal'
     },
-    
+   
   {
     path: '/home',
     name: 'Home',
@@ -36,6 +36,10 @@ Vue.use(VueRouter)
     name: 'InicioModal',
     component: () => import(/* webpackChunkName: "InicioModal" */'../views/InicioModal.vue')
   },
+ {
+   path: 'https://modest-kepler-f68d08.netlify.app',
+   name: 'Home2'
+ }
 
 ]
 
